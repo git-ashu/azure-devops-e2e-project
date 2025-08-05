@@ -1,99 +1,127 @@
-# 🚀 Azure DevOps E2E Project – Progress Tracker
+# 📘 DevOps Project Progress Tracker – Azure DevOps E2E (FastAPI on AKS)
 
-This document tracks the complete end-to-end Azure DevOps project—from infrastructure setup to CI/CD and observability.
+## 🔗 Project Links
 
----
-
-## ✅ Phase 1: Project Setup
-
-- [x] Create Azure DevOps Organization
-- [x] Create project and repo
-- [x] Initialize folder structure
-- [x] Commit `README.md` and `PROGRESS.md`
+- **GitHub Repo:** https://github.com/git-ashu/azure-devops-e2e-project  
+- **Azure DevOps Project:** https://dev.azure.com/testashuazure/azureexamprep
 
 ---
 
-## ⏳ Phase 2: App Development & Dockerization
+## 📅 8-Day DevOps Execution Plan
 
-- [ ] Develop Python Flask app (`app.py`)
-- [ ] Create `requirements.txt` and `Dockerfile`
-- [ ] Test image locally
-- [ ] Push to `app/` directory in repo
-
----
-
-## ⏳ Phase 3: Infrastructure as Code (Terraform)
-
-- [ ] Write Terraform scripts to provision:
-  - [ ] Azure Kubernetes Service (AKS)
-  - [ ] Azure Container Registry (ACR)
-  - [ ] (Optional) Azure Key Vault
-- [ ] Test with `terraform init/plan/apply`
-- [ ] Commit to `terraform/` directory
+| Day | Focus Area | Status | Notes |
+|-----|------------|--------|-------|
+| Day 1 | Scaffold FastAPI App & Dockerize | ⬜ Not Started | App base + tests + Docker |
+| Day 2 | Terraform Infra (AKS, ACR, Vault) | ⬜ Not Started | AKS infra provision |
+| Day 3 | Helm Chart + AKS Deploy | ⬜ Not Started | Helm chart, K8s secrets |
+| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started | Azure Pipelines (CI) |
+| Day 5 | CD Pipeline (Helm Deploy) | ⬜ Not Started | AKS deploy via Helm |
+| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started | Secure pipeline & cluster |
+| Day 7 | Monitoring (App Insights, Logs) | ⬜ Not Started | Azure Monitor + Alerts |
+| Day 8 | Docs & AZ-400 Exam Prep | ⬜ Not Started | Final doc + exam review |
 
 ---
 
-## ⏳ Phase 4: Build Pipeline (CI)
+## ✅ Daily To-Do Breakdown
 
-- [ ] Create Azure DevOps CI pipeline:
-  - [ ] Docker build
-  - [ ] Trivy scan
-  - [ ] Push to ACR
-- [ ] YAML file: `pipelines/build-pipeline.yml`
+### 📌 Day 1 – FastAPI App Scaffold
 
----
-
-## ⏳ Phase 5: Release Pipeline (CD)
-
-- [ ] Create Azure DevOps release pipeline:
-  - [ ] Deploy to AKS
-  - [ ] Use manifests or Helm charts
-- [ ] YAML file: `pipelines/deploy-pipeline.yml`
+- [ ] Create `/src/payment-service/app/` structure  
+- [ ] Add FastAPI `main.py` with `/payments` POST route  
+- [ ] Use Pydantic for validation  
+- [ ] Add `pytest` tests for endpoint  
+- [ ] Create `requirements.txt`  
+- [ ] Add `Dockerfile` + `.dockerignore`  
+- [ ] Build and run app locally with Docker  
+- [ ] Push to GitHub repo  
 
 ---
 
-## ⏳ Phase 6: Secrets & Configuration
+### 📌 Day 2 – Terraform Infra (AKS + ACR + Key Vault)
 
-- [ ] Store secrets in Azure Key Vault
-- [ ] Reference them in pipeline securely
-- [ ] Inject into Kubernetes as environment variables or secrets
-
----
-
-## ⏳ Phase 7: Monitoring & Logging
-
-- [ ] Set up ELK Stack (Elasticsearch, Logstash, Kibana)
-- [ ] Forward app logs with Filebeat
-- [ ] Create visualizations in Kibana
-
----
-
-## ⏳ Phase 8: Documentation & Demo
-
-- [ ] Update `README.md` with usage and architecture
-- [ ] Finalize `PROGRESS.md`
-- [ ] (Optional) Record walkthrough video or publish blog
-- [ ] Share on GitHub and LinkedIn
+- [ ] Setup Terraform project in `/infra`  
+- [ ] Write `main.tf`, `variables.tf`, `outputs.tf`  
+- [ ] Create:  
+  - Resource Group  
+  - AKS cluster  
+  - Azure Container Registry  
+  - Azure Key Vault  
+  - Log Analytics Workspace  
+- [ ] Run `terraform init`, `plan`, `apply`  
+- [ ] Connect to AKS using `kubectl`
 
 ---
 
-## 🛠️ Tools & Services Used
+### 📌 Day 3 – Helm Chart + Deploy
 
-| Category             | Tool/Service            |
-|----------------------|-------------------------|
-| Cloud Platform       | Azure                   |
-| Infrastructure as Code | Terraform             |
-| CI/CD                | Azure DevOps Pipelines  |
-| Containerization     | Docker                  |
-| Orchestration        | Kubernetes (AKS)        |
-| Security Scanning    | Trivy                   |
-| Logging & Monitoring | ELK Stack (Filebeat)    |
-| Scripting Language   | Python                  |
+- [ ] Create `/charts/payment-service/`  
+- [ ] Write `Chart.yaml`, `values.yaml`, templates  
+- [ ] Add Kubernetes `deployment.yaml`, `service.yaml`  
+- [ ] Use `values.yaml` for image, config, secrets  
+- [ ] Test deployment to AKS with Helm  
+- [ ] Confirm app reachable via public IP
 
 ---
 
-## 📅 Progress Log
+### 📌 Day 4 – CI Pipeline (Azure Pipelines)
 
-| Date       | Task Completed                                |
-|------------|-----------------------------------------------|
-| 2025-08-04 | Project initialized with README & PROGRESS.md |
+- [ ] Create `azure-pipelines.yml`  
+- [ ] Steps:  
+  - Install dependencies  
+  - Run `pytest`  
+  - Run SonarCloud scan  
+  - Build Docker image  
+  - Push to ACR  
+- [ ] Run pipeline on GitHub commits
+
+---
+
+### 📌 Day 5 – CD Pipeline (Azure Pipelines)
+
+- [ ] Extend pipeline to deploy via Helm  
+- [ ] Add AKS auth step  
+- [ ] Use `kubectl` + `helm` to deploy  
+- [ ] Separate stages for Dev → Staging → Prod  
+- [ ] Add manual approval step between environments
+
+---
+
+### 📌 Day 6 – Security & Hardening
+
+- [ ] Add Snyk or Trivy to pipeline  
+- [ ] Run image vulnerability scan  
+- [ ] Use Key Vault for secrets  
+- [ ] Add Git secret scanning (e.g., GitGuardian)  
+- [ ] Harden AKS with RBAC & network policies
+
+---
+
+### 📌 Day 7 – Monitoring & Alerts
+
+- [ ] Enable Azure Monitor for AKS  
+- [ ] Add Application Insights SDK to app  
+- [ ] Send logs and metrics  
+- [ ] Set up alerts for latency, 500 errors, etc.  
+- [ ] Create dashboard in Azure Monitor
+
+---
+
+### 📌 Day 8 – Documentation & AZ-400 Review
+
+- [ ] Finalize `README.md` and `progress.md`  
+- [ ] Add architecture diagram (optional)  
+- [ ] Add links to pipeline runs & dashboards  
+- [ ] Map features to AZ-400 exam objectives  
+- [ ] Review Microsoft Learn + do mock test
+
+---
+
+## 🧭 Current Phase
+
+> **Day:** 1  
+> **Goal:** Scaffold FastAPI App + Docker  
+> **Next:** Terraform AKS Infra
+
+---
+
+_Last updated: 2025-08-05_
