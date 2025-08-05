@@ -21,29 +21,29 @@ A complete CI/CD DevOps project using **Python (FastAPI)** deployed on **Azure K
 
 ## 📂 Project Structure
 
+```text
 azure-devops-e2e-project/
 ├── src/
-│ └── payment-service/
-│ ├── app/
-│ │ └── main.py
-│ ├── tests/
-│ │ └── test_main.py
-│ ├── Dockerfile
-│ └── requirements.txt
+│   └── payment-service/
+│       ├── app/
+│       │   └── main.py
+│       ├── tests/
+│       │   └── test_main.py
+│       ├── Dockerfile
+│       └── requirements.txt
 ├── infra/
-│ ├── main.tf
-│ ├── variables.tf
-│ └── outputs.tf
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
 ├── charts/
-│ └── payment-service/
-│ ├── Chart.yaml
-│ ├── values.yaml
-│ └── templates/
+│   └── payment-service/
+│       ├── Chart.yaml
+│       ├── values.yaml
+│       └── templates/
 ├── azure-pipelines.yml
 ├── progress.md
 └── README.md
-
-
+```
 
 ---
 
@@ -73,7 +73,7 @@ azure-devops-e2e-project/
 - Docker
 - Python 3.11+
 - Azure CLI
-- Kubectl
+- kubectl
 - Helm v3+
 
 ---
@@ -91,7 +91,7 @@ azure-devops-e2e-project/
 | Day 7 | Monitoring & Alerts | ⬜ |
 | Day 8 | Final Docs & AZ-400 Review | ⬜ |
 
-➡️ See [`progress.md`](./progress.md) for full daily checklist.
+➡️ See `progress.md` for full daily checklist.
 
 ---
 
@@ -131,33 +131,37 @@ docker run -p 8000:8000 payment-api
 
 # Helm install to AKS
 helm upgrade --install payment charts/payment-service --namespace dev
-
 ```
 
-📚 AZ-400 Mapping
-This project covers most of the AZ-400 objectives, including:
+---
 
-Implementing CI/CD pipelines
+## 📚 AZ-400 Mapping
 
-Managing infrastructure as code
+This project covers most of the AZ-400 exam objectives, including:
 
-Securing DevOps workflows
+- Implementing CI/CD pipelines  
+- Managing infrastructure as code (IaC)  
+- Securing DevOps workflows  
+- Monitoring applications in production  
+- Managing secrets and compliance  
+- Deployment strategies: rolling, blue-green, canary  
 
-Monitoring applications
+---
 
-Managing secrets and compliance
+## 📈 Resources
 
-Deployment strategies (rolling, blue-green)
+- [Azure DevOps Pipelines Docs](https://learn.microsoft.com/en-us/azure/devops/pipelines/)
+- [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/)
 
-📈 Resources
-Azure DevOps Pipelines Docs
+---
 
-Terraform Azure Provider
+## 🧠 Credits
 
-FastAPI Docs
-
-Azure Monitor
-
-🧠 Credits
-Built by @git-ashu
+Built by [@git-ashu](https://github.com/git-ashu)  
 Project scaffolded with help from ChatGPT (OpenAI)
+
+---
+
+_Last updated: 2025-08-05_
