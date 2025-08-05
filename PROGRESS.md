@@ -9,16 +9,16 @@
 
 ## 📅 8-Day DevOps Execution Plan
 
-| Day | Focus Area | Status | Notes |
-|-----|------------|--------|-------|
-| Day 1 | Scaffold FastAPI App & Dockerize | ⬜ Not Started | App base + tests + Docker |
-| Day 2 | Terraform Infra (AKS, ACR, Vault) | ⬜ Not Started | AKS infra provision |
-| Day 3 | Helm Chart + AKS Deploy | ⬜ Not Started | Helm chart, K8s secrets |
-| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started | Azure Pipelines (CI) |
-| Day 5 | CD Pipeline (Helm Deploy) | ⬜ Not Started | AKS deploy via Helm |
-| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started | Secure pipeline & cluster |
-| Day 7 | Monitoring (App Insights, Logs) | ⬜ Not Started | Azure Monitor + Alerts |
-| Day 8 | Docs & AZ-400 Exam Prep | ⬜ Not Started | Final doc + exam review |
+| Day | Focus Area                       | Status       | Notes                 |
+|-----|--------------------------------|--------------|-----------------------|
+| Day 1 | Scaffold FastAPI App & Dockerize | ✅ Completed | App base + tests + Docker done |
+| Day 2 | Terraform Infra (AKS, ACR, Vault) | ⬜ Not Started | AKS infra provisioning next |
+| Day 3 | Helm Chart + AKS Deploy          | ⬜ Not Started |                       |
+| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started |                       |
+| Day 5 | CD Pipeline (Helm Deploy)        | ⬜ Not Started |                       |
+| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started |                       |
+| Day 7 | Monitoring (App Insights, Logs)  | ⬜ Not Started |                       |
+| Day 8 | Docs & AZ-400 Exam Prep          | ⬜ Not Started |                       |
 
 ---
 
@@ -26,14 +26,14 @@
 
 ### 📌 Day 1 – FastAPI App Scaffold
 
-- [ ] Create `/src/payment-service/app/` structure  
-- [ ] Add FastAPI `main.py` with `/payments` POST route  
-- [ ] Use Pydantic for validation  
-- [ ] Add `pytest` tests for endpoint  
-- [ ] Create `requirements.txt`  
-- [ ] Add `Dockerfile` + `.dockerignore`  
-- [ ] Build and run app locally with Docker  
-- [ ] Push to GitHub repo  
+- [x] Create `/src/payment-service/app/` structure  
+- [x] Add FastAPI `main.py` with `/payments` POST route  
+- [x] Use Pydantic for validation  
+- [x] Add `pytest` tests for endpoint  
+- [x] Create `requirements.txt`  
+- [x] Add `Dockerfile` + `.dockerignore`  
+- [x] Build and run app locally with Docker  
+- [x] Push to GitHub repo  
 
 ---
 
@@ -118,10 +118,11 @@
 
 ## 🧭 Current Phase
 
-> **Day:** 1  
-> **Goal:** Scaffold FastAPI App + Docker  
-> **Next:** Terraform AKS Infra
+> **Day:** 2  
+> **Goal:** Terraform AKS Infra provisioning  
+> **Next:** Write Terraform configs & run apply
 
 ---
 
 _Last updated: 2025-08-05_
+ 
