@@ -131,3 +131,33 @@ docker run -p 8000:8000 payment-api
 
 # Helm install to AKS
 helm upgrade --install payment charts/payment-service --namespace dev
+
+```
+
+📚 AZ-400 Mapping
+This project covers most of the AZ-400 objectives, including:
+
+Implementing CI/CD pipelines
+
+Managing infrastructure as code
+
+Securing DevOps workflows
+
+Monitoring applications
+
+Managing secrets and compliance
+
+Deployment strategies (rolling, blue-green)
+
+📈 Resources
+Azure DevOps Pipelines Docs
+
+Terraform Azure Provider
+
+FastAPI Docs
+
+Azure Monitor
+
+🧠 Credits
+Built by @git-ashu
+Project scaffolded with help from ChatGPT (OpenAI)
