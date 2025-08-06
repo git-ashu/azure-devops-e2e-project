@@ -1,0 +1,26 @@
+# Terraform
+infra/.terraform/
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/.terraform.lock.hcl
+
+# Ignore terraform binary if you use any local binary folder
+.terraform-bin/
+
+# Python
+src/payment-service/__pycache__/
+src/payment-service/app/__pycache__/
+src/payment-service/tests/__pycache__/
+
+# Python environment
+venv/
+.env
+
+# Docker
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
