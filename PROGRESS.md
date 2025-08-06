@@ -9,16 +9,16 @@
 
 ## 📅 8-Day DevOps Execution Plan
 
-| Day | Focus Area                       | Status       | Notes                 |
-|-----|--------------------------------|--------------|-----------------------|
+| Day | Focus Area                       | Status       | Notes                           |
+|-----|----------------------------------|--------------|---------------------------------|
 | Day 1 | Scaffold FastAPI App & Dockerize | ✅ Completed | App base + tests + Docker done |
-| Day 2 | Terraform Infra (AKS, ACR, Vault) | ⬜ Not Started | AKS infra provisioning next |
-| Day 3 | Helm Chart + AKS Deploy          | ⬜ Not Started |                       |
-| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started |                       |
-| Day 5 | CD Pipeline (Helm Deploy)        | ⬜ Not Started |                       |
-| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started |                       |
-| Day 7 | Monitoring (App Insights, Logs)  | ⬜ Not Started |                       |
-| Day 8 | Docs & AZ-400 Exam Prep          | ⬜ Not Started |                       |
+| Day 2 | Terraform Infra (AKS, ACR, Vault) | ✅ Completed | Infra applied + connected to AKS |
+| Day 3 | Helm Chart + AKS Deploy          | ⬜ Not Started |                                 |
+| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started |                                 |
+| Day 5 | CD Pipeline (Helm Deploy)        | ⬜ Not Started |                                 |
+| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started |                                 |
+| Day 7 | Monitoring (App Insights, Logs)  | ⬜ Not Started |                                 |
+| Day 8 | Docs & AZ-400 Exam Prep          | ⬜ Not Started |                                 |
 
 ---
 
@@ -39,16 +39,18 @@
 
 ### 📌 Day 2 – Terraform Infra (AKS + ACR + Key Vault)
 
-- [ ] Setup Terraform project in `/infra`  
-- [ ] Write `main.tf`, `variables.tf`, `outputs.tf`  
-- [ ] Create:  
-  - Resource Group  
-  - AKS cluster  
-  - Azure Container Registry  
-  - Azure Key Vault  
-  - Log Analytics Workspace  
-- [ ] Run `terraform init`, `plan`, `apply`  
-- [ ] Connect to AKS using `kubectl`
+- [x] Setup Terraform project in `/infra`  
+- [x] Write `main.tf`, `variables.tf`, `outputs.tf`  
+- [x] Create:  
+  - [x] Resource Group  
+  - [x] AKS cluster  
+  - [x] Azure Container Registry  
+  - [x] Azure Key Vault  
+  - [ ] Log Analytics Workspace *(optional, can do later)*  
+- [x] Run `terraform init`, `plan`, `apply`  
+- [x] Connect to AKS using `kubectl`  
+- [x] Build Docker image and push to ACR  
+- [x] Test app manually using Postman
 
 ---
 
@@ -118,11 +120,11 @@
 
 ## 🧭 Current Phase
 
-> **Day:** 2  
-> **Goal:** Terraform AKS Infra provisioning  
-> **Next:** Write Terraform configs & run apply
+> **Day:** 3  
+> **Goal:** Helm-based Kubernetes Deployment  
+> **Next:** Scaffold chart folder and write templates
 
 ---
 
-_Last updated: 2025-08-05_
+_Last updated: 2025-08-06_
  
