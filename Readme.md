@@ -35,13 +35,16 @@ azure-devops-e2e-project/
 │   ├── main.tf
 │   ├── variables.tf
 │   └── outputs.tf
+├── k8s/
+│   ├── payment-deployment.yaml
+│   └── payment-service.yaml
 ├── charts/
 │   └── payment-service/
 │       ├── Chart.yaml
 │       ├── values.yaml
 │       └── templates/
 ├── azure-pipelines.yml
-├── progress.md
+├── PROGRESS.md
 └── README.md
 ```
 
@@ -50,7 +53,7 @@ azure-devops-e2e-project/
 ## 🎯 Features
 
 - ✅ FastAPI microservice (`/payments` API)
-- ✅ Unit testing with pytest
+- ✅ Unit testing with `pytest`
 - ✅ Docker containerization
 - ✅ AKS cluster provisioned via Terraform
 - ✅ Helm chart for application deployment
@@ -80,18 +83,18 @@ azure-devops-e2e-project/
 
 ## 🛠️ Step-by-Step Execution
 
-| Phase | Description | Status |
-|-------|-------------|--------|
-| Day 1 | Scaffold FastAPI App & Dockerize | ⬜ |
-| Day 2 | Terraform Infra (AKS, ACR, Vault) | ⬜ |
-| Day 3 | Helm Chart + AKS Deployment | ⬜ |
-| Day 4 | Azure DevOps CI Pipeline | ⬜ |
-| Day 5 | Azure DevOps CD Pipeline | ⬜ |
-| Day 6 | Security & Vulnerability Checks | ⬜ |
-| Day 7 | Monitoring & Alerts | ⬜ |
-| Day 8 | Final Docs & AZ-400 Review | ⬜ |
+| Phase | Description                       | Status     |
+|-------|-----------------------------------|------------|
+| Day 1 | Scaffold FastAPI App & Dockerize  | ✅ Done     |
+| Day 2 | Terraform Infra (AKS, ACR, Vault) | ✅ Done     |
+| Day 3 | Helm Chart + AKS Deployment       | ⬜ Upcoming |
+| Day 4 | Azure DevOps CI Pipeline          | ⬜ Upcoming |
+| Day 5 | Azure DevOps CD Pipeline          | ⬜ Upcoming |
+| Day 6 | Security & Vulnerability Checks   | ⬜ Upcoming |
+| Day 7 | Monitoring & Alerts               | ⬜ Upcoming |
+| Day 8 | Final Docs & AZ-400 Review        | ⬜ Upcoming |
 
-➡️ See `progress.md` for full daily checklist.
+➡️ See `PROGRESS.md` for full daily checklist.
 
 ---
 
@@ -101,7 +104,8 @@ azure-devops-e2e-project/
 - Pipelines never expose credentials
 - RBAC + Network Policies enforced in AKS
 - Snyk/Trivy scans on Docker images and code
-- Git secrets scanning (GitGuardian or native)
+- Git secrets scanning (GitHub native & GitGuardian)
+- Remote backend for Terraform (recommended)
 
 ---
 
@@ -164,4 +168,5 @@ Project scaffolded with help from ChatGPT (OpenAI)
 
 ---
 
-_Last updated: 2025-08-05_
+_Last updated: 2025-08-06_
+ 

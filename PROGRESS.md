@@ -9,16 +9,16 @@
 
 ## 📅 8-Day DevOps Execution Plan
 
-| Day | Focus Area                       | Status       | Notes                           |
-|-----|----------------------------------|--------------|---------------------------------|
-| Day 1 | Scaffold FastAPI App & Dockerize | ✅ Completed | App base + tests + Docker done |
-| Day 2 | Terraform Infra (AKS, ACR, Vault) | ✅ Completed | Infra applied + connected to AKS |
-| Day 3 | Helm Chart + AKS Deploy          | ⬜ Not Started |                                 |
-| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started |                                 |
-| Day 5 | CD Pipeline (Helm Deploy)        | ⬜ Not Started |                                 |
-| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started |                                 |
-| Day 7 | Monitoring (App Insights, Logs)  | ⬜ Not Started |                                 |
-| Day 8 | Docs & AZ-400 Exam Prep          | ⬜ Not Started |                                 |
+| Day | Focus Area                       | Status       | Notes                                   |
+|-----|----------------------------------|--------------|-----------------------------------------|
+| Day 1 | Scaffold FastAPI App & Dockerize | ✅ Completed | App base + tests + Docker done          |
+| Day 2 | Terraform Infra (AKS, ACR, Vault) | ✅ Completed | Infra applied, image pushed, tested     |
+| Day 3 | Helm Chart + AKS Deploy          | ⬜ Not Started | Charts + Helm deploy next               |
+| Day 4 | CI Pipeline (Build + Scan + Push) | ⬜ Not Started | Azure Pipelines CI setup                |
+| Day 5 | CD Pipeline (Helm Deploy)        | ⬜ Not Started | Helm-based CD with approvals            |
+| Day 6 | Security (Snyk, Secrets, Harden AKS) | ⬜ Not Started | Start moving tfstate to remote backend  |
+| Day 7 | Monitoring (App Insights, Logs)  | ⬜ Not Started |                                           |
+| Day 8 | Docs & AZ-400 Exam Prep          | ⬜ Not Started | Final polish + Exam-oriented review     |
 
 ---
 
@@ -42,87 +42,35 @@
 - [x] Setup Terraform project in `/infra`  
 - [x] Write `main.tf`, `variables.tf`, `outputs.tf`  
 - [x] Create:  
-  - [x] Resource Group  
-  - [x] AKS cluster  
-  - [x] Azure Container Registry  
-  - [x] Azure Key Vault  
-  - [ ] Log Analytics Workspace *(optional, can do later)*  
+  - Resource Group  
+  - AKS cluster  
+  - Azure Container Registry  
+  - Azure Key Vault  
+  - Log Analytics Workspace  
 - [x] Run `terraform init`, `plan`, `apply`  
 - [x] Connect to AKS using `kubectl`  
 - [x] Build Docker image and push to ACR  
-- [x] Test app manually using Postman
+- [x] Test app endpoint manually via Postman  
+- [x] Push code to GitHub (cleaned `.gitignore`)  
 
 ---
 
-### 📌 Day 3 – Helm Chart + Deploy
+### 🛡️ Upcoming Hardening Tasks (Start Day 3 or 6)
 
-- [ ] Create `/charts/payment-service/`  
-- [ ] Write `Chart.yaml`, `values.yaml`, templates  
-- [ ] Add Kubernetes `deployment.yaml`, `service.yaml`  
-- [ ] Use `values.yaml` for image, config, secrets  
-- [ ] Test deployment to AKS with Helm  
-- [ ] Confirm app reachable via public IP
-
----
-
-### 📌 Day 4 – CI Pipeline (Azure Pipelines)
-
-- [ ] Create `azure-pipelines.yml`  
-- [ ] Steps:  
-  - Install dependencies  
-  - Run `pytest`  
-  - Run SonarCloud scan  
-  - Build Docker image  
-  - Push to ACR  
-- [ ] Run pipeline on GitHub commits
-
----
-
-### 📌 Day 5 – CD Pipeline (Azure Pipelines)
-
-- [ ] Extend pipeline to deploy via Helm  
-- [ ] Add AKS auth step  
-- [ ] Use `kubectl` + `helm` to deploy  
-- [ ] Separate stages for Dev → Staging → Prod  
-- [ ] Add manual approval step between environments
-
----
-
-### 📌 Day 6 – Security & Hardening
-
-- [ ] Add Snyk or Trivy to pipeline  
-- [ ] Run image vulnerability scan  
-- [ ] Use Key Vault for secrets  
-- [ ] Add Git secret scanning (e.g., GitGuardian)  
-- [ ] Harden AKS with RBAC & network policies
-
----
-
-### 📌 Day 7 – Monitoring & Alerts
-
-- [ ] Enable Azure Monitor for AKS  
-- [ ] Add Application Insights SDK to app  
-- [ ] Send logs and metrics  
-- [ ] Set up alerts for latency, 500 errors, etc.  
-- [ ] Create dashboard in Azure Monitor
-
----
-
-### 📌 Day 8 – Documentation & AZ-400 Review
-
-- [ ] Finalize `README.md` and `progress.md`  
-- [ ] Add architecture diagram (optional)  
-- [ ] Add links to pipeline runs & dashboards  
-- [ ] Map features to AZ-400 exam objectives  
-- [ ] Review Microsoft Learn + do mock test
+- [ ] Move Terraform state to Azure Blob Storage (remote backend)  
+- [ ] Add `.gitignore` entries for `.terraform/`, state files  
+- [ ] Rotate leaked secrets (ACR login)  
+- [ ] Add secret scanning rules / GitHub protection  
+- [ ] Start planning Key Vault integration with workloads  
+- [ ] Add Trivy/Snyk for Docker scan later in CI  
 
 ---
 
 ## 🧭 Current Phase
 
 > **Day:** 3  
-> **Goal:** Helm-based Kubernetes Deployment  
-> **Next:** Scaffold chart folder and write templates
+> **Goal:** Helm chart + AKS deployment  
+> **Next:** Write Helm chart & test Helm-based app deployment
 
 ---
 
